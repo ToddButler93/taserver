@@ -2,57 +2,48 @@ local classDef = {
     ootbClass="Heavy",
     armorClass="Heavy",
     weapons={
-        -- Brute
+        -- Impact
         "Heavy Spinfusor",
-        "Devastator Spinfusor",
-        "Gladiator",
-        "Automatic Shotgun",
-        "The Hammer",
-        "Nova Colt",
-        "Plasma Cannon",
-        "EFG",
-        -- Juggernaut
-        "Fusion Mortar",
-        "Fusion Mortar Deluxe",
-        "MIRV Launcher",
-        "Spinfusor MKD",
-        "Spinfusor MK-X",
-        "Heavy Twinfusor",
-        "X1 LMG",
-        -- Doombringer
-        "Chain Gun",
-        "Chain Cannon",
         "Heavy Bolt Launcher",
+        --TODO Confirm Devastator is Heavy Blinksfusor
+        "Devastator Spinfusor",
+        "Heavy Twinfusor",
+        -- Timed
+        "Fusion Mortar",
+        "MIRV Launcher",
+        -- Specialty
         "Saber Launcher",
-        "Titan Launcher",
+        "Gladiator",
+        -- Bullet
+        "Chain Gun",
+        "X1 LMG",
+        "Plasma Cannon",
+        "Nova Colt",
+        "Nova Blaster MX",
+        -- Short Range
+        "Automatic Shotgun",
+        "EFG",
     },
     beltItems={
-        -- Brute
-        "Fractal Grenade",
-        "Extended Fractal",
-        "Light Sticky Grenade",
-        -- Juggernaut
-        "Heavy AP Grenade",
-        "Heavy AP-XL",
-        "Spinfusor Disk",
-        -- Doombringer
         "Frag Grenade",
+        "Fractal Grenade",
         "Mines",
     },
     packs={
-        "Heavy Shield Pack",
-        "Heavy Energy Pack",
-        "Survival Pack",
-        "Regen Pack",
         "Forcefield",
+        "Heavy Energy Pack",
+        "Heavy Shield Pack",
+        -- TODO Heavy Utility Pack
+        --"Survival Pack",
+        --"Regen Pack",
     },
     skins={
+        "Doombringer",
         "Brute",
         "Crusher",
+        "Executioner",
         "Juggernaut",
         "The Forlorn",
-        "Doombringer",
-        "Executioner",
     },
     properties={
         --TODO Correct to default OOTB values.
