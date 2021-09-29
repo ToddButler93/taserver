@@ -106,10 +106,10 @@ local classDef = {
 
         -- Perk Effects
         -- Close Combat
-        --[[
-        MeleeDamageReduction = 0.0,
-        BackstabMeleeBuff = 0.0,
-        ]]
+        
+        --MeleeDamageReduction = 0.0,
+        BackstabMeleeBuff = 1.0,
+        
 
         -- Determination
         --[[
@@ -117,8 +117,8 @@ local classDef = {
         ]]
 
         -- Egocentric
-        SelfDamageReduction = 1.0,
-        IgnoreGrenadeEffectsOnSelf = true,
+        --SelfDamageReduction = 1.0,
+        --IgnoreGrenadeEffectsOnSelf = true,
 
         -- Lightweight
         --[[
@@ -127,10 +127,8 @@ local classDef = {
         ]]
 
         -- Looter
-        --[[
-        AmmoPickupBuff = 0.0,
-        BeltPickupBuff = 0,
-        ]]
+        AmmoPickupBuff = 1.0,
+        BeltPickupBuff = 99,
 
         -- Mechanic
         --[[
@@ -146,11 +144,10 @@ local classDef = {
         ]]
 
         -- Potential Energy
-        --[[
-        PotentialEnergy = false,
-        PotentialEnergyDamageTransferBuff = 0.0,
+        PotentialEnergy = true,
+        PotentialEnergyDamageTransferBuff = 100.0,
         PotentialEnergyOnFallDamage = false,
-        ]]
+        
 
         -- Quick Draw
         --[[
@@ -175,10 +172,10 @@ local classDef = {
         ]]
 
         -- Safe Fall
-        --[[
-        FallDamageReduction = 0.0,
-        RunoverDamageReduction = 0.0,
-        ]]
+        
+        FallDamageReduction = 1.0,
+        --RunoverDamageReduction = 0.0,
+        
 
         -- Safety Third
         --[[
@@ -188,12 +185,10 @@ local classDef = {
         ]]
 
         -- Sonic Punch
-        --[[
         SonicPunch = true,
-        SonicPunchRange = 0.0,
-        SonicPunchKnockback = 0.0,
-        SonicPunchFlagDrop = false,
-        ]]
+        SonicPunchRange = 150.0,
+        SonicPunchKnockback = 85000.0,
+        SonicPunchFlagDrop = true,
         
         -- Stealthy
         --[[
@@ -209,17 +204,13 @@ local classDef = {
         
 
         -- Super Heavy
-        --[[
         SuperHeavy = true,
-        MassBuff = 0.0,
-        ]]
-        
+        --MassBuff = 0.0,
+                
 
         -- Survivalist
-        --[[
-        SurvivalistHealth = 0.0,
-        SurvivalistEnergy = 0.0,
-        ]]
+        --SurvivalistHealth = 0.0,
+        SurvivalistEnergy = 1.0,
         
 
         -- Ultra Capacitor II/Ultra Capacitor
@@ -301,6 +292,8 @@ local itemDefs = {
         name="Light Twinfusor", 
         changes={
             -- TODO Add Property Changes.
+            ReloadSingle = false,
+            ProjectileInheritance = 0.75,
         },
         valueMods={
             -- TODO Add Value mods.
@@ -309,14 +302,10 @@ local itemDefs = {
     {
         name="Blinksfusor", 
         changes={
-            Damage = 0.0,
-            DirectHitMultiplier = 1.0,
-            SpareAmmo = 69,
-            ReloadSingle = false,
-            ProjectileLifespan = 10,
             -- TODO Add Property Changes.
         },
         valueMods={
+            -- TODO Add Value mods.
         },
     },
     {
@@ -501,7 +490,7 @@ local itemDefs = {
     {
         name="Thrust Pack", 
         changes={
-            ThrustPackEnergyCost = 0.2, -- Thrust Pack
+            ThrustPackEnergyCost = 50, -- Thrust Pack
             --ThrustPackImpulse = 1.0, -- Thrust Pack
             --ThrustPackSidewaysImpulse = 1.0, -- Thrust Pack
             ThrustPackMinVerticalImpulse = -9999999.0, -- Thrust Pack
@@ -512,7 +501,7 @@ local itemDefs = {
         },
         valueMods={
             -- TODO Add Value mods.        
-            ThrustPackCostReduction = 0.0,
+            --ThrustPackCostReduction = 0.0,
             ThrustPackPowerBuff = 2.0,
         },
     },

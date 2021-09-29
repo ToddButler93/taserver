@@ -108,13 +108,13 @@ ServerSettings.MapRotation.add(Maps.Arena.LavaArena)
 ServerSettings.MapRotation.add(Maps.Arena.Whiteout)
 ]]
 -------------- Rabbit --------------
-ServerSettings.MapRotation.add(Maps.Rabbit.Nightabatic)
-ServerSettings.MapRotation.add(Maps.Rabbit.SulfurCove)
+ServerSettings.MapRotation.add(Maps.Rabbit.Crossfire)
 ServerSettings.MapRotation.add(Maps.Rabbit.DrydockNight)
 ServerSettings.MapRotation.add(Maps.Rabbit.Inferno)
-ServerSettings.MapRotation.add(Maps.Rabbit.Crossfire)
-ServerSettings.MapRotation.add(Maps.Rabbit.Outskirts)
+ServerSettings.MapRotation.add(Maps.Rabbit.Nightabatic)
 ServerSettings.MapRotation.add(Maps.Rabbit.Quicksand)
+ServerSettings.MapRotation.add(Maps.Rabbit.Outskirts)
+ServerSettings.MapRotation.add(Maps.Rabbit.SulfurCove)
 -------------- Team Death Match --------------
 --[[
 ServerSettings.MapRotation.add(Maps.TDM.Outskirts)

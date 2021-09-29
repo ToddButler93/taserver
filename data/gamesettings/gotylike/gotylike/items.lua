@@ -1,4 +1,4 @@
-local utils = require("ootb/utils")
+local utils = require("gotylike/utils")
 
 local proj_propsToPrint = {
     "Damage",
@@ -202,10 +202,6 @@ itemChangeDefs = {
             {class="Heavy", name="Auto Shotgun"},
             {class="Heavy", name="The Hammer"},
         },
-        nitrons = {
-            {class="Light", name="Impact Nitron"},
-            {class="Light", name="Explosive Nitron"},
-        },
         explosive_weapon_dmg_banding = {
             -- All explosive weapons that use the common damage banding values
             -- of min damage of 50%, banding range between 50%-90% of damage radius
@@ -281,29 +277,13 @@ itemChangeDefs = {
         {
             group="direct_hit_explosives", 
             changes={
-                Damage = 1.0,
-                DirectHitMultiplier = 1000.0,
-                SpareAmmo = 999,
-                ProjectileLifespan = 60,
-                SelfImpactMomentumMultiplier = 1.2,
-                SelfImpactExtraZMomentum = 90000,
-            }
-        },
-        {
-            group="nitrons", 
-            changes={
-                Damage = 1.0,
-                DirectHitMultiplier = 1000.0,
-                SpareAmmo = 999,
-                ProjectileLifespan = 60,
-                SelfImpactMomentumMultiplier = 1.2,
-                SelfImpactExtraZMomentum = 90000,
+                -- Same as GOTY, smaller than OOTB
+                CollisionSize = 10,
             }
         },
         {
             group="explosive_weapon_dmg_banding", 
             changes={
-                --[[
                 -- GOTY damage banding
                 MinDamageProportion = 0.5,
                 MaxDamageRangeProportion = 0.5,
@@ -313,13 +293,11 @@ itemChangeDefs = {
                 DamageAgainstShrikeMultiplier = 3,
                 DamageAgainstGravCycleMultiplier = 1.2,
                 DamageAgainstBeowulfMultiplier = 1.2,
-                --]]
             }
         },
         {
             group="grenade_dmg_banding", 
             changes={
-                --[[
                 -- GOTY damage banding
                 MinDamageProportion = 0.3,
                 MaxDamageRangeProportion = 0.5,
@@ -329,13 +307,11 @@ itemChangeDefs = {
                 DamageAgainstGravCycleMultiplier = 1.2,
                 DamageAgainstBeowulfMultiplier = 1.2,
                 SelfImpactExtraZMomentum = 90000,
-                --]]
             }
         },
         {
             group="chain", 
             changes={
-                --[[
                 Accuracy = 0.98,
                 AccuracyLossOnShot = 0,
                 AccuracyLossMax = 0.11,
@@ -349,13 +325,11 @@ itemChangeDefs = {
                 DamageAgainstShrikeMultiplier = 0.65,
                 DamageAgainstGravCycleMultiplier = 0,
                 DamageAgainstBeowulfMultiplier = 0,
-                --]]
             }
         },
         {
             group="shotguns", 
             changes={
-                --[[
                 -- GOTY falloff
                 MinDamageProportion = 0.3,
                 MaxDamageRangeProportion = 0.5,
@@ -363,13 +337,11 @@ itemChangeDefs = {
                 DamageAgainstShrikeMultiplier = 0.65,
                 DamageAgainstGravCycleMultiplier = 0,
                 DamageAgainstBeowulfMultiplier = 0,
-                --]]
             }
         },
         {
             group="hitscan_pistols",
             changes={
-                --[[
                 HitscanRange=10000,
                 MinDamageProportion = 0.4,
                 MaxDamageRangeProportion = 0.2,
@@ -377,7 +349,6 @@ itemChangeDefs = {
                 DamageAgainstShrikeMultiplier = 0.65,
                 DamageAgainstGravCycleMultiplier = 0,
                 DamageAgainstBeowulfMultiplier = 0,
-                --]]
             }
         },
         ---------------------
@@ -387,8 +358,188 @@ itemChangeDefs = {
             class="Light", -- Will apply across classes 
             name="Melee", 
             changes={
-                --Damage = 900,
+                Damage = 900,
             },
+        },
+        
+
+        ---------------------
+        -- PERKS
+        ---------------------
+        {
+            class="Light", -- Will apply across classes
+            name="Bounty Hunter",
+            valueMods={
+                -- This doesn't do anything because credits don't exist...
+            }
+        },
+        {
+            class="Light", -- Will apply across classes
+            name="Close Combat",
+            valueMods={
+                MeleeDamageReduction = 0.6,
+                BackstabMeleeBuff = 1,
+            }
+        },
+        {
+            class="Light", -- Will apply across classes
+            name="Determination",
+            valueMods={
+                Determination = true,
+            }
+        },
+        {
+            class="Light", -- Will apply across classes
+            name="Egocentric",
+            valueMods={
+                SelfDamageReduction = 0.35,
+                IgnoreGrenadeEffectsOnSelf = true,
+            }
+        },
+        {
+            class="Light", -- Will apply across classes
+            name="Lightweight",
+            valueMods={
+                MassBuff = -0.3,
+                RegenTimeBuff = -2.0
+            }
+        },
+        {
+            class="Light", -- Will apply across classes
+            name="Looter",
+            valueMods={
+                AmmoPickupBuff = 1.0,
+                BeltPickupBuff = 1,
+            }
+        },
+        {
+            class="Light", -- Will apply across classes
+            name="Mechanic",
+            valueMods={
+                RepairToolDamagesEnemyObjectives = true,
+                RepairRateBuff = 0.2,
+                VehiclePassengerDamageReductionBuff = 0.25,
+            }
+        },
+        {
+            class="Light", -- Will apply across classes
+            name="Pilot",
+            valueMods={
+                VehicleHealthBuff = 0.2,
+                EjectionSeat = true,
+            }
+        },
+        {
+            class="Light", -- Will apply across classes
+            name="Potential Energy",
+            valueMods={
+                PotentialEnergy = true,
+                PotentialEnergyDamageTransferBuff = 0.06,
+                PotentialEnergyOnFallDamage = true,
+            }
+        },
+        {
+            class="Light", -- Will apply across classes
+            name="Quick Draw",
+            valueMods={
+                QuickDraw = 0.5,
+                QuickDrawBelt = 0.2,
+            }
+        },
+        {
+            class="Light", -- Will apply across classes
+            name="Rage",
+            valueMods={
+                Rage = true,
+                RageTime = 15,
+                RageEnergyRegen = 0.2,
+                RageMassChange = -0.2,
+                RageHealthRestoration = 0.5,
+            }
+        },
+        {
+            class="Light", -- Will apply across classes
+            name="Reach",
+            valueMods={
+                Reach = true,
+                ReachTier = 3,
+                ReachOnPickups = true,
+            }
+        },
+        {
+            class="Light", -- Will apply across classes
+            name="Safe Fall",
+            valueMods={
+                FallDamageReduction = 1.0,
+                RunoverDamageReduction = 1.0,
+            }
+        },
+        {
+            class="Light", -- Will apply across classes
+            name="Safety Third",
+            valueMods={
+                ExtraBeltAmmo = 1,
+                BeltDamageRadiusBuff = 0.1,
+                ExtraMines = 1,
+            }
+        },
+        {
+            class="Light", -- Will apply across classes
+            name="Sonic Punch",
+            valueMods={
+                SonicPunch = true,
+                SonicPunchRange = 315,
+                SonicPunchKnockback = 750,
+                SonicPunchFlagDrop = true,
+            }
+        },
+        {
+            class="Light", -- Will apply across classes
+            name="Stealthy",
+            valueMods={
+                Stealthy = 0.9,
+                TurretTargetAcquisitionBuff = 0.3,
+            }
+        },
+        {
+            class="Light", -- Will apply across classes
+            -- aka Ultra Capacitor I
+            name="Super Capacitor",
+            valueMods={
+                EnergyBuff = 10,
+            }
+        },
+        {
+            class="Light", -- Will apply across classes
+            name="Super Heavy",
+            valueMods={
+                MassBuff = 0.8,
+                SuperHeavy = true,
+            }
+        },
+        {
+            class="Light", -- Will apply across classes
+            name="Survivalist",
+            valueMods={
+                SurvivalistHealth = 0.2,
+                SurvivalistEnergy = 0.4,
+            }
+        },
+        {
+            class="Light", -- Will apply across classes
+            -- aka Ultra Capacitor II
+            name="Ultra Capacitor",
+            valueMods={
+                EnergyBuff = 10,
+            }
+        },
+        {
+            class="Light", -- Will apply across classes
+            name="Wheel Deal",
+            valueMods={
+                VehicleCostReduction = 0.3,
+                VehicleEnergyBuff = 0.25,
+            }
         },
     },
 }
