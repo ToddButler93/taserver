@@ -280,13 +280,203 @@ local classDef = {
 
 local itemDefs = {
     -------------- Weapons --------------
-    --TODO Fill out with belt specific property changes.
+    
+    {
+        name="Heavy Spinfusor", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="Heavy Bolt Launcher", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="Devastator Spinfusor", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="Heavy Twinfusor", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="Fusion Mortar", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="MIRV Launcher", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="Saber Launcher", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="Gladiator", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="Chain Gun", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="X1 LMG", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="Plasma Cannon", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="Nova Colt", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },{
+        name="Nova Blaster MX", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="Automatic Shotgun", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="EFG", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+
 
     -------------- Belt Items --------------
-    --TODO Fill out with belt specific property changes.
 
+    {
+        name="Frag Grenade", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="Fractal Grenade", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="Mines", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+
+    
     -------------- Packs --------------
-    --TODO Fill out with pack specific property changes.
+
+    {
+        name="Forcefield", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="Heavy Energy Pack", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="Heavy Shield Pack", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
 }
 
 

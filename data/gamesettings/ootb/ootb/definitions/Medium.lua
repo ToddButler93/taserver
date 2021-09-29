@@ -284,6 +284,7 @@ local classDef = {
 
 local itemDefs = {
     -------------- Weapons --------------
+    
     {
         name="Spinfusor", 
         changes={
@@ -565,12 +566,103 @@ local itemDefs = {
         },
     },
     
+
     -------------- Belt Items --------------
-    --TODO Fill out with belt specific property changes.
+
+    {
+        name="EMP Grenade", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="Blackout Grenade", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="AP Grenades", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="Motion Sensor", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="Cluster Grenade", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+
 
     -------------- Packs --------------
-    --TODO Fill out with pack specific property changes.
-    
+
+    {
+        name="Light Turret", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="Shield Pack", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="Utility Pack", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="Jammer Pack", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="EXR Turret", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
 }
 
 

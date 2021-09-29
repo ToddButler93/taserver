@@ -281,13 +281,240 @@ local classDef = {
 
 local itemDefs = {
     -------------- Weapons --------------
-    --TODO Fill out with belt specific property changes.
+
+    {
+        name="Light Spinfusor", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="Bolt Launcher", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="Light Twinfusor", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="Blinksfusor", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="Light Grenade Launcher", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="Jackal", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="BXT1", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="Phase Rifle", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="Falcon", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="Light Assault Rifle", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="Sparrow", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="Throwing Knives", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="Shotgun", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="Shocklance", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+
 
     -------------- Belt Items --------------
-    --TODO Fill out with belt specific property changes.
+        
+    {
+        name="Impact Nitron", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="Sticky Grenades", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="Claymore Mines", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="Prism Mines", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="Explosive Nitron", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="Chaff Grenades", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="T5 Grenades", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+
 
     -------------- Packs --------------
-    --TODO Fill out with pack specific property changes.
+    
+    {
+        name="Light Energy Pack", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="Stealth Pack", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="Thrust Pack", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="Light Utility Pack", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
 }
 
 
