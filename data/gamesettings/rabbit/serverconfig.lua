@@ -11,8 +11,8 @@ Logger.debug("----- OOTB Preset Applied -----")
 
 -------------- SERVER INFO --------------
 
-ServerSettings.Description = "My Custom OOTB Server"
-ServerSettings.Motd = "This is my OOTB server"
+ServerSettings.Description = "My Custom Rabbit Server"
+ServerSettings.Motd = "This is my Rabbit server"
 -- ServerSettings.Password = "some-password"
 ServerSettings.GameSettingMode = ServerSettings.GameSettingModes.OOTB
 
@@ -69,6 +69,7 @@ ServerSettings.MutuallyExclusiveItems.add("Light", "SAP20", "Light", "Light Util
 ServerSettings.MapRotation.VotingEnabled = true
 ServerSettings.MapRotation.Mode = ServerSettings.MapRotation.Modes.Sequential -- Can be set to ServerSettings.MapRotation.Modes.Random for random map rotation.
 -------------- Capture the Flag --------------
+--[[
 ServerSettings.MapRotation.add(Maps.CTF.Katabatic)
 ServerSettings.MapRotation.add(Maps.CTF.ArxNovena)
 ServerSettings.MapRotation.add(Maps.CTF.DangerousCrossing)
@@ -76,7 +77,6 @@ ServerSettings.MapRotation.add(Maps.CTF.Crossfire)
 ServerSettings.MapRotation.add(Maps.CTF.Drydock)
 ServerSettings.MapRotation.add(Maps.CTF.Terminus)
 ServerSettings.MapRotation.add(Maps.CTF.Sunstar)
---[[
 ServerSettings.MapRotation.add(Maps.CTF.BellaOmega)
 ServerSettings.MapRotation.add(Maps.CTF.BellaOmegaNS)
 ServerSettings.MapRotation.add(Maps.CTF.Blueshift)
@@ -108,7 +108,6 @@ ServerSettings.MapRotation.add(Maps.Arena.LavaArena)
 ServerSettings.MapRotation.add(Maps.Arena.Whiteout)
 ]]
 -------------- Rabbit --------------
---[[
 ServerSettings.MapRotation.add(Maps.Rabbit.Nightabatic)
 ServerSettings.MapRotation.add(Maps.Rabbit.SulfurCove)
 ServerSettings.MapRotation.add(Maps.Rabbit.DrydockNight)
@@ -116,7 +115,6 @@ ServerSettings.MapRotation.add(Maps.Rabbit.Inferno)
 ServerSettings.MapRotation.add(Maps.Rabbit.Crossfire)
 ServerSettings.MapRotation.add(Maps.Rabbit.Outskirts)
 ServerSettings.MapRotation.add(Maps.Rabbit.Quicksand)
-]]
 -------------- Team Death Match --------------
 --[[
 ServerSettings.MapRotation.add(Maps.TDM.Outskirts)
