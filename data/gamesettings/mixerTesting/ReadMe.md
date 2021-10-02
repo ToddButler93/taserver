@@ -1,4 +1,4 @@
-# TAMods-Server Mixer Preset
+# TAMods-Server Mixer Testing Preset
 ## What is a mixer?
 A mixer is an inclusive pickup game. Being competitive is encouraged though the primary focus is having fun.
 ## Mixer Rules

@@ -1,6 +1,6 @@
-# TAMods-Server GOTY AU/NZ PUG Preset
+# TAMods-Server GOTY NA PUG Preset
 
-Discord: https://discord.gg/4Z9HDbfxeK
+NA PUG Preset for the mixer community.
 
 ## Format
 - 7v7 Capture the Flag.
