@@ -1,8 +1,7 @@
 # TAMods-Server GOTYLike PUG Preset
 
-TAMods-Server preset which brings Tribes: Ascend as close to the GOTY patch as possible.
-
-Fork for AU/NZ PUGs.
+AU/NZ PUG Config.
+Discord: https://discord.gg/4Z9HDbfxeK
 
 # Format
 - 7v7 Capture the Flag.

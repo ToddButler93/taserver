@@ -2,27 +2,25 @@
 -- Logger.setLevel(Logger.Levels.Debug)
 
 -------------- PRESET --------------
-Logger.debug("----- Loading GOTYLike Preset -----")
+Logger.debug("----- Loading OOTB Preset -----")
 
--- Import the GOTYLike preset
-require("gotylike/main")
+-- Import the OOTB preset
+require("ootb/main")
 
-Logger.debug("----- GOTYLike Preset Applied -----")
+Logger.debug("----- OOTB Preset Applied -----")
 
 -------------- SERVER INFO --------------
 
--- Server Information
-ServerSettings.Description = "My Custom GOTY Server"
-ServerSettings.Motd = "A Game of the Year edition server"
--- ServerSettings.Password = "###"
-ServerSettings.GameSettingMode = ServerSettings.GameSettingModes.GOTY
+ServerSettings.Description = "NA Mixer"
+ServerSettings.Motd = "Mixer-Style Rules: No HS/chain, FF on"
+ServerSettings.Password = "###"
+ServerSettings.GameSettingMode = ServerSettings.GameSettingModes.OOTB
 
 -------------- ADMINISTRATION --------------
 
 -- Basic Access Control, see https://www.tamods.org/docs/doc_srv_api_admin for more
 
 local roles = {
-    --[[
     {
         name     = "admin",
         password = "###", -- <<< Set the password! 
@@ -35,7 +33,6 @@ local roles = {
         commands = {"NextMap", "NextMapName", "StartMap", "EndMap"},
         canLua   = false,
     },
-    ]]
 }
 
 -- To set up admin / moderator roles, uncomment above
@@ -48,6 +45,42 @@ doSetupRoles(roles)
 ServerSettings.LightCountLimit = 32
 ServerSettings.MediumCountLimit = 32
 ServerSettings.HeavyCountLimit = 32
+-- OOTB Sniper and Thrust pack ban
+ServerSettings.MutuallyExclusiveItems.add("Light", "BXT1", "Light", "Thrust Pack")
+ServerSettings.MutuallyExclusiveItems.add("Light", "BXT1A", "Light", "Thrust Pack")
+ServerSettings.MutuallyExclusiveItems.add("Light", "Phase Rifle", "Light", "Thrust Pack")
+ServerSettings.MutuallyExclusiveItems.add("Light", "SAP20", "Light", "Thrust Pack")
+-- OOTB Sniper and Stealth pack ban
+ServerSettings.MutuallyExclusiveItems.add("Light", "BXT1", "Light", "Stealth Pack")
+ServerSettings.MutuallyExclusiveItems.add("Light", "BXT1A", "Light", "Stealth Pack")
+ServerSettings.MutuallyExclusiveItems.add("Light", "Phase Rifle", "Light", "Stealth Pack")
+ServerSettings.MutuallyExclusiveItems.add("Light", "SAP20", "Light", "Stealth Pack")
+-- OOTB Sniper and Utility pack ban
+ServerSettings.MutuallyExclusiveItems.add("Light", "BXT1", "Light", "Light Utility Pack")
+ServerSettings.MutuallyExclusiveItems.add("Light", "BXT1A", "Light", "Light Utility Pack")
+ServerSettings.MutuallyExclusiveItems.add("Light", "Phase Rifle", "Light", "Light Utility Pack")
+ServerSettings.MutuallyExclusiveItems.add("Light", "SAP20", "Light", "Light Utility Pack")
+-- Ban Light Chain/Hitscan
+ServerSettings.BannedItems.add("Light", "Sparrow")
+ServerSettings.BannedItems.add("Light", "Phase Rifle")
+ServerSettings.BannedItems.add("Light", "BXT1 Rifle")
+ServerSettings.BannedItems.add("Light", "Falcon")
+ServerSettings.BannedItems.add("Light", "Light Assault Rifle")
+ServerSettings.BannedItems.add("Light", "Throwing Knives")
+ServerSettings.BannedItems.add("Light", "Shotgun")
+-- Ban Medium Chain/Hitscan
+ServerSettings.BannedItems.add("Medium", "Assault Rifle")
+ServerSettings.BannedItems.add("Medium", "Nova Blaster")
+ServerSettings.BannedItems.add("Medium", "NJ4 SMG")
+ServerSettings.BannedItems.add("Medium", "Eagle Pistol")
+ServerSettings.BannedItems.add("Medium", "NJ5-B SMG")
+ServerSettings.BannedItems.add("Medium", "Sawed-Off Shotgun")
+-- Ban Heavy Chain/Hitscan
+ServerSettings.BannedItems.add("Heavy", "Chain Gun")
+ServerSettings.BannedItems.add("Heavy", "Nova Colt")
+ServerSettings.BannedItems.add("Heavy", "X1 LMG")
+ServerSettings.BannedItems.add("Heavy", "Nova Blaster MX")
+ServerSettings.BannedItems.add("Heavy", "Automatic Shotgun")
 
 -------------- Map Rotation --------------
 ServerSettings.MapRotation.VotingEnabled = true
@@ -60,7 +93,6 @@ ServerSettings.MapRotation.add(Maps.CTF.Crossfire)
 ServerSettings.MapRotation.add(Maps.CTF.Drydock)
 ServerSettings.MapRotation.add(Maps.CTF.Terminus)
 ServerSettings.MapRotation.add(Maps.CTF.Sunstar)
---[[
 ServerSettings.MapRotation.add(Maps.CTF.BellaOmega)
 ServerSettings.MapRotation.add(Maps.CTF.BellaOmegaNS)
 ServerSettings.MapRotation.add(Maps.CTF.Blueshift)
@@ -73,14 +105,11 @@ ServerSettings.MapRotation.add(Maps.CTF.Raindance)
 ServerSettings.MapRotation.add(Maps.CTF.Stonehenge)
 ServerSettings.MapRotation.add(Maps.CTF.Tartarus)
 ServerSettings.MapRotation.add(Maps.CTF.TempleRuins)
-]]
 -------------- Player Made Maps --------------
 -- Note: These need to be installed manually on the server prior to enabling.
---[[
 ServerSettings.MapRotation.addCustom("TrCTF-Blues")
 ServerSettings.MapRotation.addCustom("TrCTF-Incidamus")
 ServerSettings.MapRotation.addCustom("TrCTF-Periculo")
-]]
 -------------- Arena --------------
 --[[
 ServerSettings.MapRotation.add(Maps.Arena.WalledIn)
@@ -111,7 +140,6 @@ ServerSettings.MapRotation.add(Maps.TDM.Inferno)
 ServerSettings.MapRotation.add(Maps.TDM.Miasma)
 ]]
 -------------- CTF Blitz --------------
---[[
 ServerSettings.MapRotation.add(Maps.Blitz.ArxNovena)
 ServerSettings.MapRotation.add(Maps.Blitz.BellaOmega)
 ServerSettings.MapRotation.add(Maps.Blitz.Blueshift)
@@ -123,7 +151,6 @@ ServerSettings.MapRotation.add(Maps.Blitz.IceCoaster)
 ServerSettings.MapRotation.add(Maps.Blitz.Katabatic)
 ServerSettings.MapRotation.add(Maps.Blitz.Perdition)
 ServerSettings.MapRotation.add(Maps.Blitz.Terminus)
-]]
 -------------- Capture and Hold --------------
 --[[
 ServerSettings.MapRotation.add(Maps.CaH.Outskirts)

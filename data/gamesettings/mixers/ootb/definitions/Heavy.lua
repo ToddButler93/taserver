@@ -1,50 +1,49 @@
 local classDef = {
-    ootbClass="Light",
-    armorClass="Light",
+    ootbClass="Heavy",
+    armorClass="Heavy",
     weapons={
         -- Impact
-        "Light Spinfusor",
-        "Bolt Launcher",
-        "Light Twinfusor",
-        "Blinksfusor",
+        "Heavy Spinfusor",
+        "Heavy Bolt Launcher",
+        --TODO Confirm Devastator is Heavy Blinksfusor
+        "Devastator Spinfusor",
+        "Heavy Twinfusor",
         -- Timed
-        "Light Grenade Launcher",
-        "Jackal",
+        "Fusion Mortar",
+        "MIRV Launcher",
         -- Specialty
-        "BXT1",
-        "Phase Rifle",
+        "Saber Launcher",
+        "Gladiator",
         -- Bullet
-        "Falcon",
-        "Light Assault Rifle",
-        "Sparrow",
-        "Throwing Knives",
+        "Chain Gun",
+        "X1 LMG",
+        "Plasma Cannon",
+        "Nova Colt",
+        "Nova Blaster MX",
         -- Short Range
-        "Shotgun",
-        "Shocklance",
+        "Automatic Shotgun",
+        "EFG",
     },
     beltItems={
-        "Impact Nitron",
-        "Sticky Grenades",
-        "Claymore Mines",
-        "Prism Mines",
-        "Explosive Nitron",
-        "Chaff Grenades",
-        "T5 Grenades",
+        "Frag Grenade",
+        "Fractal Grenade",
+        "Mines",
     },
     packs={
-        "Light Energy Pack",
-        "Stealth Pack",
-        "Thrust Pack",
-        "Light Utility Pack",
+        "Forcefield",
+        "Heavy Energy Pack",
+        "Heavy Shield Pack",
+        -- TODO Heavy Utility Pack
+        --"Survival Pack",
+        --"Regen Pack",
     },
     skins={
-        "Infiltrator",
-        "Sentinel",
-        "Mercenary",
-        "Assassin",
-        "Specter",
-        "Pathfinder",
-        "Freerunner",
+        "Doombringer",
+        "Brute",
+        "Crusher",
+        "Executioner",
+        "Juggernaut",
+        "The Forlorn",
     },
     properties={
         --TODO Correct to default OOTB values.
@@ -106,10 +105,10 @@ local classDef = {
 
         -- Perk Effects
         -- Close Combat
-        
-        --MeleeDamageReduction = 0.0,
-        BackstabMeleeBuff = 1.0,
-        
+        --[[
+        MeleeDamageReduction = 0.0,
+        BackstabMeleeBuff = 0.0,
+        ]]
 
         -- Determination
         --[[
@@ -117,8 +116,10 @@ local classDef = {
         ]]
 
         -- Egocentric
-        --SelfDamageReduction = 1.0,
-        --IgnoreGrenadeEffectsOnSelf = true,
+        --[[
+        SelfDamageReduction = 0.0,
+        IgnoreGrenadeEffectsOnSelf = false,
+        ]]
 
         -- Lightweight
         --[[
@@ -127,8 +128,10 @@ local classDef = {
         ]]
 
         -- Looter
-        AmmoPickupBuff = 1.0,
-        BeltPickupBuff = 99,
+        --[[
+        AmmoPickupBuff = 0.0,
+        BeltPickupBuff = 0,
+        ]]
 
         -- Mechanic
         --[[
@@ -144,10 +147,11 @@ local classDef = {
         ]]
 
         -- Potential Energy
-        PotentialEnergy = true,
-        PotentialEnergyDamageTransferBuff = 100.0,
+        --[[
+        PotentialEnergy = false,
+        PotentialEnergyDamageTransferBuff = 0.0,
         PotentialEnergyOnFallDamage = false,
-        
+        ]]
 
         -- Quick Draw
         --[[
@@ -172,10 +176,10 @@ local classDef = {
         ]]
 
         -- Safe Fall
-        
-        FallDamageReduction = 1.0,
-        --RunoverDamageReduction = 0.0,
-        
+        --[[
+        FallDamageReduction = 0.0,
+        RunoverDamageReduction = 0.0,
+        ]]
 
         -- Safety Third
         --[[
@@ -185,10 +189,12 @@ local classDef = {
         ]]
 
         -- Sonic Punch
+        --[[
         SonicPunch = true,
-        SonicPunchRange = 1000.0,
-        SonicPunchKnockback = 85000.0,
-        SonicPunchFlagDrop = true,
+        SonicPunchRange = 0.0,
+        SonicPunchKnockback = 0.0,
+        SonicPunchFlagDrop = false,
+        ]]
         
         -- Stealthy
         --[[
@@ -204,13 +210,17 @@ local classDef = {
         
 
         -- Super Heavy
+        --[[
         SuperHeavy = true,
-        --MassBuff = 0.0,
-                
+        MassBuff = 0.0,
+        ]]
+        
 
         -- Survivalist
-        --SurvivalistHealth = 0.0,
-        SurvivalistEnergy = 1.0,
+        --[[
+        SurvivalistHealth = 0.0,
+        SurvivalistEnergy = 0.0,
+        ]]
         
 
         -- Ultra Capacitor II/Ultra Capacitor
@@ -241,7 +251,8 @@ local classDef = {
         EnergyDrainBuff = 0.0,
         TrapDetection = false,
 
-
+        ThrustPackCostReduction = 0.0,
+        ThrustPackPowerBuff = 0.0,
         ShieldPackBuff = 0.0,
         JammerPackRadiusBuff = 0.0,
 
@@ -269,9 +280,38 @@ local classDef = {
 
 local itemDefs = {
     -------------- Weapons --------------
-
     {
-        name="Light Spinfusor", 
+        name="Heavy Spinfusor", 
+        changes={
+            Damage=800,
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="Heavy Bolt Launcher", 
+        changes={
+            Damage=800,
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="Devastator Spinfusor", 
+        changes={
+            Damage=800,
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },
+    {
+        name="Heavy Twinfusor", 
         changes={
             -- TODO Add Property Changes.
         },
@@ -280,7 +320,7 @@ local itemDefs = {
         },
     },
     {
-        name="Bolt Launcher", 
+        name="Fusion Mortar", 
         changes={
             -- TODO Add Property Changes.
         },
@@ -289,18 +329,7 @@ local itemDefs = {
         },
     },
     {
-        name="Light Twinfusor", 
-        changes={
-            -- TODO Add Property Changes.
-            ReloadSingle = false,
-            ProjectileInheritance = 0.75,
-        },
-        valueMods={
-            -- TODO Add Value mods.
-        },
-    },
-    {
-        name="Blinksfusor", 
+        name="MIRV Launcher", 
         changes={
             -- TODO Add Property Changes.
         },
@@ -309,7 +338,7 @@ local itemDefs = {
         },
     },
     {
-        name="Light Grenade Launcher", 
+        name="Saber Launcher", 
         changes={
             -- TODO Add Property Changes.
         },
@@ -318,7 +347,7 @@ local itemDefs = {
         },
     },
     {
-        name="Jackal", 
+        name="Gladiator", 
         changes={
             -- TODO Add Property Changes.
         },
@@ -327,7 +356,7 @@ local itemDefs = {
         },
     },
     {
-        name="BXT1", 
+        name="Chain Gun", 
         changes={
             -- TODO Add Property Changes.
         },
@@ -336,7 +365,7 @@ local itemDefs = {
         },
     },
     {
-        name="Phase Rifle", 
+        name="X1 LMG", 
         changes={
             -- TODO Add Property Changes.
         },
@@ -345,7 +374,7 @@ local itemDefs = {
         },
     },
     {
-        name="Falcon", 
+        name="Plasma Cannon", 
         changes={
             -- TODO Add Property Changes.
         },
@@ -354,7 +383,15 @@ local itemDefs = {
         },
     },
     {
-        name="Light Assault Rifle", 
+        name="Nova Colt", 
+        changes={
+            -- TODO Add Property Changes.
+        },
+        valueMods={
+            -- TODO Add Value mods.
+        },
+    },{
+        name="Nova Blaster MX", 
         changes={
             -- TODO Add Property Changes.
         },
@@ -363,7 +400,7 @@ local itemDefs = {
         },
     },
     {
-        name="Sparrow", 
+        name="Automatic Shotgun", 
         changes={
             -- TODO Add Property Changes.
         },
@@ -372,25 +409,7 @@ local itemDefs = {
         },
     },
     {
-        name="Throwing Knives", 
-        changes={
-            -- TODO Add Property Changes.
-        },
-        valueMods={
-            -- TODO Add Value mods.
-        },
-    },
-    {
-        name="Shotgun", 
-        changes={
-            -- TODO Add Property Changes.
-        },
-        valueMods={
-            -- TODO Add Value mods.
-        },
-    },
-    {
-        name="Shocklance", 
+        name="EFG", 
         changes={
             -- TODO Add Property Changes.
         },
@@ -401,9 +420,9 @@ local itemDefs = {
 
 
     -------------- Belt Items --------------
-        
+
     {
-        name="Impact Nitron", 
+        name="Frag Grenade", 
         changes={
             -- TODO Add Property Changes.
         },
@@ -412,7 +431,7 @@ local itemDefs = {
         },
     },
     {
-        name="Sticky Grenades", 
+        name="Fractal Grenade", 
         changes={
             -- TODO Add Property Changes.
         },
@@ -421,43 +440,7 @@ local itemDefs = {
         },
     },
     {
-        name="Claymore Mines", 
-        changes={
-            -- TODO Add Property Changes.
-        },
-        valueMods={
-            -- TODO Add Value mods.
-        },
-    },
-    {
-        name="Prism Mines", 
-        changes={
-            -- TODO Add Property Changes.
-        },
-        valueMods={
-            -- TODO Add Value mods.
-        },
-    },
-    {
-        name="Explosive Nitron", 
-        changes={
-            -- TODO Add Property Changes.
-        },
-        valueMods={
-            -- TODO Add Value mods.
-        },
-    },
-    {
-        name="Chaff Grenades", 
-        changes={
-            -- TODO Add Property Changes.
-        },
-        valueMods={
-            -- TODO Add Value mods.
-        },
-    },
-    {
-        name="T5 Grenades", 
+        name="Mines", 
         changes={
             -- TODO Add Property Changes.
         },
@@ -466,11 +449,11 @@ local itemDefs = {
         },
     },
 
-
-    -------------- Packs --------------
     
+    -------------- Packs --------------
+
     {
-        name="Light Energy Pack", 
+        name="Forcefield", 
         changes={
             -- TODO Add Property Changes.
         },
@@ -479,7 +462,7 @@ local itemDefs = {
         },
     },
     {
-        name="Stealth Pack", 
+        name="Heavy Energy Pack", 
         changes={
             -- TODO Add Property Changes.
         },
@@ -488,25 +471,7 @@ local itemDefs = {
         },
     },
     {
-        name="Thrust Pack", 
-        changes={
-            ThrustPackEnergyCost = 50, -- Thrust Pack
-            --ThrustPackImpulse = 1.0, -- Thrust Pack
-            --ThrustPackSidewaysImpulse = 1.0, -- Thrust Pack
-            ThrustPackMinVerticalImpulse = -9999999.0, -- Thrust Pack
-            ThrustPackCooldownTime = 0.1, -- Thrust Pack
-            --ThrustPackSpeedRangeStart = 1.0, -- Thrust Pack
-            --ThrustPackSpeedRangeEnd = 1.0, -- Thrust Pack
-            --ThrustPackSpeedCapReduction = 1.0, -- Thrust Pack
-        },
-        valueMods={
-            -- TODO Add Value mods.        
-            --ThrustPackCostReduction = 0.0,
-            ThrustPackPowerBuff = 2.0,
-        },
-    },
-    {
-        name="Light Utility Pack", 
+        name="Heavy Shield Pack", 
         changes={
             -- TODO Add Property Changes.
         },

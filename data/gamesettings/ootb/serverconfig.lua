@@ -1,5 +1,5 @@
--- TAMods-Server configuration can be placed in this file
 -- You can read about the configuration language at: https://www.tamods.org/docs/doc_srv_api_overview
+-- Logger.setLevel(Logger.Levels.Debug)
 
 -------------- PRESET --------------
 Logger.debug("----- Loading OOTB Preset -----")
@@ -13,9 +13,8 @@ Logger.debug("----- OOTB Preset Applied -----")
 
 ServerSettings.Description = "My Custom OOTB Server"
 ServerSettings.Motd = "This is my OOTB server"
--- ServerSettings.Password = "some-password"
+-- ServerSettings.Password = "###"
 ServerSettings.GameSettingMode = ServerSettings.GameSettingModes.OOTB
-
 
 -------------- ADMINISTRATION --------------
 
@@ -111,7 +110,6 @@ ServerSettings.MapRotation.add(Maps.Arena.Whiteout)
 --[[
 ServerSettings.MapRotation.add(Maps.Rabbit.Nightabatic)
 ServerSettings.MapRotation.add(Maps.Rabbit.SulfurCove)
-ServerSettings.MapRotation.add(Maps.Rabbit.DrydockNight)
 ServerSettings.MapRotation.add(Maps.Rabbit.Inferno)
 ServerSettings.MapRotation.add(Maps.Rabbit.Crossfire)
 ServerSettings.MapRotation.add(Maps.Rabbit.Outskirts)

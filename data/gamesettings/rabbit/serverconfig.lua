@@ -13,7 +13,7 @@ Logger.debug("----- OOTB Preset Applied -----")
 
 ServerSettings.Description = "My Custom Rabbit Server"
 ServerSettings.Motd = "This is my Rabbit server"
--- ServerSettings.Password = "some-password"
+-- ServerSettings.Password = "###"
 ServerSettings.GameSettingMode = ServerSettings.GameSettingModes.OOTB
 
 
@@ -109,7 +109,6 @@ ServerSettings.MapRotation.add(Maps.Arena.Whiteout)
 ]]
 -------------- Rabbit --------------
 ServerSettings.MapRotation.add(Maps.Rabbit.Crossfire)
-ServerSettings.MapRotation.add(Maps.Rabbit.DrydockNight)
 ServerSettings.MapRotation.add(Maps.Rabbit.Inferno)
 ServerSettings.MapRotation.add(Maps.Rabbit.Nightabatic)
 ServerSettings.MapRotation.add(Maps.Rabbit.Quicksand)

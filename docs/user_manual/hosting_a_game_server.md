@@ -47,7 +47,7 @@ connect to the replacement login server, follow these steps:
 8.  Run the `download_compatible_controller.py` script to download the latest compatible
     version of `TAMods-Server.dll`. TAMods-Server is responsible for all game-related settings,
     including server description, message of the day and password.
-    Consult the [TAMods-Server documentation](https://www.tamods.org/docs/doc_srv_api_overview.html)
+    Consult the [TAMods-Server documentation](https://www.tamods.org/docs/doc_srv_api_overview)
     on how to change any of these.
 
 9.  Run the `download_udpproxy.py` script to download the `udpproxy.exe` program used by the
