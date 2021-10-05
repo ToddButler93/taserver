@@ -162,8 +162,9 @@ local itemDefs = {
     {
         name="Proximity Grenades", 
         changes={
-            Damage = 620,
+            Damage = 300,
             ExplosiveRadius = 528,
+            ImpactMomentum = 0,
             SpareAmmo = 2,
         },
     },
