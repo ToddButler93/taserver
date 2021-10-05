@@ -8,14 +8,25 @@ NA PUG Preset for the mixer community.
 - 10 minutes of overtime.
 
 ## Map Pool
-- Arx Novena
 - Katabatic
-- DX
+- ArxNovena
+- DangerousCrossing
 - Crossfire
+- Drydock
 - Terminus
 - Sunstar
-- Drydock
 - BellaOmegaNS
+- CanyonCrusade
+- BellaOmega
+- Blueshift
+- Hellfire
+- IceCoaster
+- Perdition
+- Permafrost
+- Raindance
+- Stonehenge
+- Tartarus
+- TempleRuins
 - Blues
 - Incidamus
 - Periculo
@@ -24,12 +35,12 @@ NA PUG Preset for the mixer community.
 
 ### Gameplay related bans
 - Orbital/out of map glitches are banned in every form, regular rock bounces are allowed.
-- All powered deployables are banned on Dangerous Crossing.
 - No hitbox/flash ini use of any kind. 
 - External cheats are banned.
 
 #### Perk Changes
-- Lightweight doesn't currently do anything.
+- Lightweight doesn't currently do anything, merged with Rage.
+
 ##### Rage
 - Nerfed rage duration from 15 to 13.
 - Nerfed rage by removing health regen.
@@ -40,7 +51,7 @@ NA PUG Preset for the mixer community.
 - Buffed chain to remove spread.
 
 #### Hitscan Weapons
-- Nerfed pistol range from 10000 to 6000.
+- Nerfed pistol range from 10000 to 7500.
 - Nerfed damage falloff to have a smaller max damage at long longes.
 - Buffed damage falloff to have a slightly longer range of max damage.
 - Buffed pistol accuracy loss removed.
@@ -75,7 +86,8 @@ NA PUG Preset for the mixer community.
 - Nerfed jammer pack by increasing the cost to use.
 
 #### Soldier
-- Proximity Grenades Banned.
+- Proximity Grenades now give no impulse
+- Proximity Grenades damage from 620 to 300.
 
 ##### Eagle Pistol
 - Falloff adjusted
@@ -106,8 +118,8 @@ NA PUG Preset for the mixer community.
 
 ### Vehicles
 #### Grav Cycle
-- Limit 16 per team.
-- Price: 10.
+- Limit 4 per team.
+- Price: 5000.
 
 #### Beowulf
 - Limit 1 per team.
@@ -121,6 +133,6 @@ NA PUG Preset for the mixer community.
 - No custom physics presets.
 - No base upgrades.
 - No base assets.
-- Supply Drop costs 2000.
+- Supply Drop costs 5000.
 - Drop Station no longer blocks players.
 - No Flag Drag.
