@@ -273,6 +273,13 @@ itemChangeDefs = {
             {class="Heavy", name="Frag Grenade"},
             {class="Heavy", name="Light Sticky Grenade"},
         },
+        mines = {
+            {class="Light", name="Prism Mines"},
+            {class="Light", name="Claymore Mines"},
+            {class="Light", name="Motion Mines"},
+            {class="Medium", name="Motion Sensor"},
+            {class="Heavy", name="Mines"},
+        },
     },
     mods = {
         ---------------------
@@ -378,6 +385,12 @@ itemChangeDefs = {
                 DamageAgainstGravCycleMultiplier = 0,
                 DamageAgainstBeowulfMultiplier = 0,
                 --]]
+            }
+        },
+        {
+            group="mines",
+            changes={
+
             }
         },
         ---------------------

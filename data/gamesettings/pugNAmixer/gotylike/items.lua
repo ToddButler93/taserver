@@ -269,6 +269,13 @@ itemChangeDefs = {
             {class="Heavy", name="Frag Grenade"},
             {class="Heavy", name="Light Sticky Grenade"},
         },
+        mines = {
+            {class="Light", name="Prism Mines"},
+            {class="Light", name="Claymore Mines"},
+            {class="Light", name="Motion Mines"},
+            {class="Medium", name="Motion Sensor"},
+            {class="Heavy", name="Mines"},
+        },
     },
     mods = {
         ---------------------
@@ -359,6 +366,12 @@ itemChangeDefs = {
                 AccuracyLossMax = 0.0,
                 AccuracyCorrectionRate = 0.0,
                 AccuracyLossOnJump = 0.0,
+            }
+        },
+        {
+            group="mines",
+            changes={
+
             }
         },
         ---------------------
