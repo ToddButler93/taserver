@@ -47,8 +47,8 @@ NA PUG Preset for the mixer community.
 - Buffed by increasing the mass change to be between OOTB and GOTY.
 
 #### Chain Weapons
-- Nerfed chain collision set from 50 to 25.
 - Buffed chain to remove spread.
+- Removed impact momentum.
 
 #### Hitscan Weapons
 - Nerfed pistol range from 10000 to 7500.
@@ -63,6 +63,7 @@ NA PUG Preset for the mixer community.
 #### Pathfinder
 - Buffed rage thrust based on capper speed.
 - Buffed thrust Pack minimal z velocity effectively removed.
+- Replaced shotgun with Shottycolt
 
 ##### Impact Nitron
 - Nerfed Explosion radius reduced from 506 to 475.
@@ -74,12 +75,17 @@ NA PUG Preset for the mixer community.
 - Nerfed Nova Blaster clip size from 16 to 8.
 - Nerfed Nova Blaster MX clip size from 20 to 11.
 - Banned using energy based rifles with rage.
+- Nerfed Nova Blaster damage down to 300
+- Nerfed Nova Blaster MX damage down to 150 (aggressive nerf, needs updating)
+- Nerfed Nova Blaster falloff to be the same as chain.
+- Nerfed Nova Blaster MX falloff to be the same as chain.
 
 #### Infiltrator
 - Limit 1 INF per team.
 - Banned using stealth and shocklance.
 - Banned using stealth and super heavy.
 - Banned using stealth and reach.
+- Nerf throwing knives by adding falloff.
 
 #### Raider
 - Buffed jammer pack by trippling the range
@@ -95,6 +101,7 @@ NA PUG Preset for the mixer community.
 - Nerfed fire interval from 0.1 to 0.16.
 - Nerfed clip size from 20 to 16.
 - Nerfed Spare ammo from 132 to 112.
+- Buffed Eagle by giving it hold to fire.
 
 #### Doombringer
 - Mines Banned.
@@ -109,6 +116,7 @@ NA PUG Preset for the mixer community.
 - Nerfed nova colt range lowered from 10000 to 7500.
 - Nerfed nova colt minimum damage at range changed
 - Nerfed falloff at range
+- Nerfed nova colt max damage down to 150.
 
 ##### Extended Fractal
 - Nerfed ascent time from 1 to 2.

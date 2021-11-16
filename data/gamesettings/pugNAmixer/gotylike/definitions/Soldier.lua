@@ -127,12 +127,15 @@ local itemDefs = {
     {
         name="Eagle", 
         changes={
-            HoldToFire = false,
+            HoldToFire = true,
             Damage = 80,
             ClipAmmo = 16,
             SpareAmmo = 112,
             ReloadTime = 1.26,
             FireInterval = 0.16,
+            MinDamageProportion = 0.50,
+            MaxDamageRangeProportion = 0.24,
+            MinDamageRangeProportion = 0.95,
         },
     },
     {

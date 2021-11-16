@@ -88,7 +88,7 @@ local itemDefs = {
             ReloadTime = 1.4,
             -- Fire rate slightly slower than GOTY
             FireInterval = 0.3,
-            Damage = 190,
+            Damage = 150,
             HitscanRange = 7500,
             MinDamageProportion = 0.50,
             MaxDamageRangeProportion = 0.24,

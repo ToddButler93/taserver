@@ -71,6 +71,7 @@ local itemDefs = {
             SpareAmmo = 260,
             ReloadTime = 1.53,
             FireInterval = 0.1,
+            ImpactMomentum = 0.0,
         },
     },
     {
@@ -81,6 +82,7 @@ local itemDefs = {
             SpareAmmo = 260,
             ReloadTime = 1.53,
             FireInterval = 0.11,
+            ImpactMomentum = 0.0,
         },
     },
     {
@@ -92,6 +94,7 @@ local itemDefs = {
             ReloadTime = 1.26,
             FireInterval = 0.2,
             HoldToFire = false,
+            ImpactMomentum = 0.0,
         },
     },
     {
@@ -103,6 +106,7 @@ local itemDefs = {
             ReloadTime = 1.26,
             FireInterval = 0.2,
             HoldToFire = false,
+            ImpactMomentum = 0.0,
         },
     },
     {
@@ -119,6 +123,10 @@ local itemDefs = {
             FireInterval = 0.5,
             MinDamageProportion = 1, -- No falloff
             CollisionSize = 25,
+            MinDamageProportion = 0.75,
+            MaxDamageRangeProportion = 0.75,
+            MinDamageRangeProportion = 1,
+            ImpactMomentum = 0.0,
         },
     },
     {
