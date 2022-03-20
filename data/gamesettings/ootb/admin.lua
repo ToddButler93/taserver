@@ -6,7 +6,8 @@ local commands = {
         },
         func      = function (player, role, MapId)
             if Admin.Game.NextMap(MapId) then
-                Admin.SendConsoleMessageToPlayer(player, "Set next map to " .. MapId)
+                Admin.SendConsoleMessageToPlayer(player, "Set next map to " .. MapId)     
+                Admin.SendConsoleMessageToAllPlayers(player .. " set next map id to " .. MapId)
             else
                 Admin.SendConsoleMessageToPlayer(player, "Failed to set next map to " .. MapId)
             end
@@ -21,6 +22,7 @@ local commands = {
         func      = function (player, role, MapName)
             if Admin.Game.NextMapByFilename(MapName) then
                 Admin.SendConsoleMessageToPlayer(player, "Set next map to " .. MapName)
+                Admin.SendConsoleMessageToAllPlayers(player .. " set next map name to " .. MapId)
             else
                 Admin.SendConsoleMessageToPlayer(player, "Failed to set next map to " .. MapName)
             end
@@ -33,6 +35,7 @@ local commands = {
         func      = function (player, role)
             Admin.Game.StartMap()
             Admin.SendConsoleMessageToPlayer(player, "Map started")
+            Admin.SendConsoleMessageToAllPlayers("Map started by " .. player)
         end,
     },
     {
@@ -41,6 +44,7 @@ local commands = {
         func      = function (player, role)
             Admin.Game.EndMap()
             Admin.SendConsoleMessageToPlayer(player, "Map ended")
+            Admin.SendConsoleMessageToAllPlayers("Map ended by " .. player)
         end,
     },
 }
@@ -51,7 +55,12 @@ function doSetupRoles(roles)
     end
     
     for roleIdx, role in pairs(roles) do
-        Admin.Roles.add(role.name, role.password, role.canLua)
+        
+-------------- With Login --------------
+        -- Admin.Roles.add(role.name, role.password, role.canLua)
+-------------- Without Login --------------
+        Admin.Roles.addLoginlessRole(role.name, role.canLua)
+
         for cmdIdx, cmdName in pairs(role.commands) do
             Admin.Roles.addAllowedCommand(role.name, cmdName)
         end
