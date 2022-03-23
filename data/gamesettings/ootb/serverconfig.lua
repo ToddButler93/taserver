@@ -34,8 +34,8 @@ ServerSettings.MutuallyExclusiveItems.add("Light", "SAP20", "Light", "Light Util
 
 require("admin")
 
-local roles = {
 -------------- With Login (Must modify admin.lua) --------------
+local roles = {
 --    {
 --        name     = "admin",
 --        password = "administrator", -- <<< Set the password!
@@ -48,21 +48,24 @@ local roles = {
 --        commands = {"StartMap", "EndMap"},
 --        canLua   = false,
 --    },
+}
+
 -------------- Without Login --------------
-    {
-        name     = "admin",
-        commands = {"NextMap", "NextMapName", "StartMap", "EndMap"},
-        canLua   = true,
-    },
-    {
-        name     = "mod",
-        commands = {"StartMap", "EndMap"},
-        canLua   = false,
-    },
+local loginlessRoles = {
+    -- {
+    --     name     = "admin",
+    --     commands = {"NextMap", "NextMapName", "StartMap", "EndMap"},
+    --     canLua   = true,
+    -- },
+    -- {
+    --     name     = "mod",
+    --     commands = {"StartMap", "EndMap"},
+    --     canLua   = false,
+    -- },
 }
 
 -- To set up admin / moderator roles, uncomment above
-doSetupRoles(roles)
+doSetupRoles(roles, loginlessRoles)
 
 -------------- Loginless admin --------------
 -- Admin.Roles.addMember("admin", "username")
