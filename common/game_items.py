@@ -597,7 +597,6 @@ _hierarchical_definitions_goty = {
                     'Sentinel_Secondary_Falcon': 7419,
                     'Medium_Sidearm_NovaBlaster': 7394,
                     'Heavy_Sidearm_NovaBlaster_MKD': 8403,
-                    'Light_Sidearm_Sparrow': 7433,
                     'Sentinel_Secondary_AccurizedShotgun': 8239,
                     'All_H1_Shocklance': 7435,
                 },
@@ -643,7 +642,7 @@ _hierarchical_definitions_goty = {
                 'Infiltrator_Belt_StickyGrenade': 7402,
                 'Infiltrator_Belt_StickyGrenade_MKD': 8398,
                 'Infiltrator_Belt_PrismMines': 7440,
-                # 'Infiltrator_Belt_NinjaSmoke': 8248, # Repurposed as chaff grenades
+                'Infiltrator_Belt_NinjaSmoke': 8248, # Repurposed as chaff grenades
             },
             'packs': {
                 'Pathfinder_Pack_EnergyRecharge': 7825,
@@ -816,6 +815,7 @@ _hierarchical_definitions_goty = {
             'belt': {
                 'Doombringer_Belt_Mine': 7392,
                 'Doombringer_Belt_FragGrenade': 7390,
+                'Soldier_Belt_ProximityGrenade': 8222,
             },
             'packs': {
                 'Doombringer_Pack_ForceField': 7411,
