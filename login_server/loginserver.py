@@ -48,7 +48,7 @@ UNUSED_AUTHCODE_CHECK_TIME = 3600
 
 @statetracer('address_pair', 'game_servers', 'players')
 class LoginServer:
-    def __init__(self, server_queue, client_queues, server_stats_queue, ports, accounts):
+    def __init__(self, server_queue, client_queues, server_stats_queue, ports, accounts, shared_config):
         self.logger = logging.getLogger(__name__)
         self.server_queue = server_queue
         self.client_queues = client_queues
@@ -58,7 +58,7 @@ class LoginServer:
 
         self.players = TracingDict()
         self.social_network = SocialNetwork()
-        self.firewall = FirewallClient(ports)
+        self.firewall = FirewallClient(ports, shared_config)
         self.accounts = accounts
         self.message_handlers = {
             Auth2LoginAuthCodeRequestMessage: self.handle_authcode_request_message,
@@ -351,8 +351,42 @@ class LoginServer:
                 'online_players_list': [p.display_name for p in self.players.values()],
                 'online_servers_list': online_game_servers_list
             }, sort_keys=True, indent=4))
+        elif msg.env['PATH_INFO'] == '/player':
+            if "REMOTE_ADDR" in msg.env:
+                self.logger.info('Served player stats request via HTTP to peer "' + msg.env["REMOTE_ADDR"] + '"')
+            else:
+                self.logger.info('Served player stats request via HTTP to Unknown peer')
+            
+            if "QUERY_STRING" in msg.env:
+                filtered_player_name = ''.join(filter(str.isalnum, msg.env['QUERY_STRING']))
+                player_data = None
+                if filtered_player_name in self.accounts:
+                    player_data = self.get_player_settings_data(filtered_player_name)
+                
+                if player_data:
+                    filtered_player_data = {
+                        "player_found": True,
+                        "clan_tag": player_data["clan_tag"],
+                        "player_name": filtered_player_name,
+                        "rank_xp": player_data["progression"]["rank_xp"]
+                    }
+                    msg.peer.send_response(json.dumps(filtered_player_data, sort_keys=True, indent=4))
+                else:
+                    msg.peer.send_response(json.dumps({
+                        'player_found': False
+                    }, sort_keys=True, indent=4))
+            else:
+                msg.peer.send_response(None)
         else:
             msg.peer.send_response(None)
+
+    def get_player_settings_data(self, player_name):
+        try:
+            with open('data/players/' + player_name + '_settings.json', "r") as f:
+                file_contents = json.load(f)
+            return file_contents
+        except FileNotFoundError:
+            return None
 
     def convert_map_id_to_map_name_and_game_type(self, map_id):
         map_names_and_types = {
