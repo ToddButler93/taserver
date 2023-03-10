@@ -27,43 +27,41 @@ ServerSettings.MutuallyExclusiveItems.add("Light", "BXT1A", "Light", "Light Util
 ServerSettings.MutuallyExclusiveItems.add("Light", "Phase Rifle", "Light", "Light Utility Pack")
 ServerSettings.MutuallyExclusiveItems.add("Light", "SAP20", "Light", "Light Utility Pack")
 
-
 -------------- ADMINISTRATION --------------
 
 -- Basic Access Control, see https://www.tamods.org/docs/doc_srv_api_admin.html for more
 
 require("admin")
-
 -------------- With Login (Must modify admin.lua) --------------
 local roles = {
---    {
---        name     = "admin",
---        password = "administrator", -- <<< Set the password!
---        commands = {"NextMap", "NextMapName", "StartMap", "EndMap"},
---        canLua   = true, -- Admin can execute arbitrary Lua!
---    },
---    {
---        name     = "mod",
---        password = "moderator", -- <<< Set the password!
---        commands = {"StartMap", "EndMap"},
---        canLua   = false,
---    },
-}
-
--------------- Without Login --------------
-local loginlessRoles = {
     -- {
     --     name     = "admin",
-    --     commands = {"NextMap", "NextMapName", "StartMap", "EndMap"},
-    --     canLua   = true,
+    --     password = "administrator", -- <<< Set the password!
+    --     commands = {"NextMap", "NextMapName", "StartMap", "EndMap","sm","em"},
+    --     canLua   = true, -- Admin can execute arbitrary Lua!
     -- },
     -- {
     --     name     = "mod",
-    --     commands = {"StartMap", "EndMap"},
+    --     password = "moderator", -- <<< Set the password!
+    --     commands = {"StartMap", "EndMap","sm","em"},
     --     canLua   = false,
     -- },
 }
-
+    
+    -------------- Without Login --------------
+local loginlessRoles = {
+    {
+        name     = "admin",
+        commands = {"NextMap", "NextMapName", "StartMap", "EndMap","sm","em","help"},
+        canLua   = true,
+    },
+    {
+        name     = "mod",
+        commands = {"StartMap", "EndMap","sm","em","help"},
+        canLua   = false,
+    },
+}
+    
 -- To set up admin / moderator roles, uncomment above
 doSetupRoles(roles, loginlessRoles)
 

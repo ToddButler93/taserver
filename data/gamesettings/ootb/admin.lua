@@ -30,7 +30,7 @@ local commands = {
         end,
     },
     {
-        name = "StartMap",
+        name      = "StartMap",
         arguments = {},
         func      = function (player, role)
             Admin.Game.StartMap()
@@ -39,7 +39,16 @@ local commands = {
         end,
     },
     {
-        name = "sm",
+        name      = "EndMap",
+        arguments = {},
+        func      = function (player, role)
+            Admin.Game.EndMap()
+            Admin.SendConsoleMessageToPlayer(player, "Map ended")
+            Admin.SendConsoleMessageToAllPlayers("Map ended by " .. player)
+        end,
+    },
+    {
+        name      = "sm",
         arguments = {},
         func      = function (player, role)
             Admin.Game.StartMap()
@@ -48,7 +57,7 @@ local commands = {
         end,
     },
     {
-        name = "EndMap",
+        name      = "em",
         arguments = {},
         func      = function (player, role)
             Admin.Game.EndMap()
@@ -57,12 +66,11 @@ local commands = {
         end,
     },
     {
-        name = "em",
+        name      = "help",
         arguments = {},
         func      = function (player, role)
-            Admin.Game.EndMap()
-            Admin.SendConsoleMessageToPlayer(player, "Map ended")
-            Admin.SendConsoleMessageToAllPlayers("Map ended by " .. player)
+            Admin.SendConsoleMessageToPlayer(player, "Use '/srvcmd sm' to start maps.")
+            Admin.SendConsoleMessageToPlayer(player, "Use '/srvcmd em' to end the map.")
         end,
     },
 }
@@ -82,8 +90,19 @@ function doSetupRoles(roles)
 end
 
 function doSetupRoles(roles, loginlessRoles)
+    for cmdIdx, command in pairs(commands) do
+        Admin.Command.define(command.name, command.arguments, command.func)
+    end
+
     -------------- With Login --------------
-    doSetupRoles(roles)
+    for roleIdx, role in pairs(roles) do
+        Admin.Roles.add(role.name, role.password, role.canLua)
+
+        for cmdIdx, cmdName in pairs(role.commands) do
+            Admin.Roles.addAllowedCommand(role.name, cmdName)
+        end
+    end
+
     -------------- Without Login --------------
     for roleIdx, role in pairs(loginlessRoles) do
         Admin.Roles.addLoginlessRole(role.name, role.canLua)
