@@ -110,6 +110,8 @@ ServerSettings.MapRotation.add(Maps.CTF.Raindance)
 ServerSettings.MapRotation.add(Maps.CTF.Stonehenge)
 ServerSettings.MapRotation.add(Maps.CTF.Tartarus)
 ServerSettings.MapRotation.add(Maps.CTF.TempleRuins)
+--[[
+]]
 -------------- Player Made Maps --------------
 -- Note: These need to be installed manually on the server prior to enabling.
 --[[
@@ -121,17 +123,26 @@ ServerSettings.MapRotation.addCustom("TrCTF-Phlegethon")
 ServerSettings.MapRotation.addCustom("TrCTF-DesertedValley")
 ServerSettings.MapRotation.addCustom("TrCTF-Acheron")
 ServerSettings.MapRotation.addCustom("TrCTF-Styx")
+ServerSettings.MapRotation.addCustom("TrCTF-Eclipse")
+ServerSettings.MapRotation.addCustom("TrCTF-Polaris")
+ServerSettings.MapRotation.addCustom("TrCTF-Oceanus")
+ServerSettings.MapRotation.addCustom("TrCTF-Meridian")
+ServerSettings.MapRotation.addCustom("TrCTF-Ascent")
+ServerSettings.MapRotation.addCustom("TrCTF-Crash")
+-- ServerSettings.MapRotation.addCustom("TrCTF-TreacherousPass")
 ]]
 -------------- Arena --------------
 --[[
 ServerSettings.MapRotation.addCustom("TrArena-Walledin")
-ServerSettings.MapRotation.addCustom("TrArena-ElysianBattleground")
 ServerSettings.MapRotation.addCustom("TrArena-Fraytown")
 ServerSettings.MapRotation.addCustom("TrArena-Lavaarena")
 ServerSettings.MapRotation.addCustom("TrArena-Airarena")
 ServerSettings.MapRotation.addCustom("TrArena-Whiteout")
 ServerSettings.MapRotation.addCustom("TrArena-Undercroft")
 ServerSettings.MapRotation.addCustom("TrArena-Hinterland")
+-- Note: These need to be installed manually on the server prior to enabling.
+ServerSettings.MapRotation.addCustom("TrArena-ElysianBattleground")
+ServerSettings.MapRotation.addCustom("TrArena-Ruins")
 ]]
 -------------- Rabbit --------------
 --[[
@@ -165,6 +176,7 @@ ServerSettings.MapRotation.add(Maps.Blitz.IceCoaster)
 ServerSettings.MapRotation.add(Maps.Blitz.Katabatic)
 ServerSettings.MapRotation.add(Maps.Blitz.Perdition)
 ServerSettings.MapRotation.add(Maps.Blitz.Terminus)
+-- Note: These need to be installed manually on the server prior to enabling.
 ServerSettings.MapRotation.addCustom("TrCTFBlitz-Broadside")
 ]]
 -------------- Capture and Hold --------------
