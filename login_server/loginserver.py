@@ -448,7 +448,26 @@ class LoginServer:
             "1558": ["Icecoaster","Blitz"],
             "1559": ["Terminus","Blitz"],
             "1560": ["Hellfire","CTF"],
-            "1561": ["Hellfire","Blitz"]
+            "1561": ["Hellfire","Blitz"],
+            # Community Maps
+            "1601": ["ACHERON","CTF"],
+            "1602": ["BLUES","CTF"],
+            "1603": ["DESERTED VALLEY","CTF"],
+            "1604": ["FRACTURE","CTF"],
+            "1605": ["INCIDAMUS","CTF"],
+            "1606": ["PERICULO","CTF"],
+            "1607": ["PHLEGATHON","CTF"],
+            "1608": ["STYX","CTF"],
+            "1609": ["OCEANUS","CTF"],
+            "1610": ["TREACHEROUS PASS","CTF"],
+            "1611": ["MERIDIAN","CTF"],
+            "1612": ["ASCENT","CTF"],
+            "1613": ["ECLIPSE","CTF"],
+            "1614": ["POLARIS","CTF"],
+            "1615": ["CRASH","CTF"],
+            "1641": ["Ruins","Arena"],
+            "1642": ["ELYSIANBATTLEGROUND","Arena"],
+            "1651": ["BROADSIDE","Blitz"]
         }
         return map_names_and_types.get(str(map_id), ["Unknown","Unknown"])
 
