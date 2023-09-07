@@ -465,9 +465,12 @@ class LoginServer:
             "1613": ["ECLIPSE","CTF"],
             "1614": ["POLARIS","CTF"],
             "1615": ["CRASH","CTF"],
+            "1616": ["ANDROMEDA","CTF"],
             "1641": ["Ruins","Arena"],
             "1642": ["ELYSIANBATTLEGROUND","Arena"],
-            "1651": ["BROADSIDE","Blitz"]
+            "1651": ["BROADSIDE","Blitz"],
+            "1652": ["AIRARENA","Blitz"],
+            "1653": ["MAZERUNNER","Blitz"]
         }
         return map_names_and_types.get(str(map_id), ["Unknown","Unknown"])
 
