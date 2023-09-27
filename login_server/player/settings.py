@@ -27,9 +27,81 @@ DEFAULT_LAST_WIN_DATETIME = datetime.datetime(1970, 1, 1)
 BASE_XP_PER_SECOND = 0.5833
 FIRST_WIN_XP_BONUS = 1200
 
+def xp_to_rank(xp=0):
+    ranks = {
+        1: {'name': 'Recruit', 'xp': 0},
+        2: {'name': 'Cadet', 'xp': 1350},
+        3: {'name': 'Cadet First Class', 'xp': 2781},
+        4: {'name': 'Squadman I', 'xp': 4298},
+        5: {'name': 'Squadman II', 'xp': 5906},
+        6: {'name': 'Squadman III', 'xp': 11212},
+        7: {'name': 'Senior Squadman', 'xp': 16836},
+        8: {'name': 'Squad Leader', 'xp': 22798},
+        9: {'name': 'Bannerman', 'xp': 31741},
+        10: {'name': 'Legionary I', 'xp': 41130},
+        11: {'name': 'Legionary II', 'xp': 50990},
+        12: {'name': 'Legionary III', 'xp': 61342},
+        13: {'name': 'Senior Legionary', 'xp': 76870},
+        14: {'name': 'Sworn Sword', 'xp': 93020},
+        15: {'name': 'Specialist I', 'xp': 109815},
+        16: {'name': 'Specialist II', 'xp': 127283},
+        17: {'name': 'Specialist III', 'xp': 145449},
+        18: {'name': 'Senior Specialist', 'xp': 172698},
+        19: {'name': 'Tech Specialist', 'xp': 200673},
+        20: {'name': 'Lieutenant I', 'xp': 229673},
+        21: {'name': 'Lieutenant II', 'xp': 259449},
+        22: {'name': 'Lieutenant III', 'xp': 290118},
+        23: {'name': 'Senior Lieutenant', 'xp': 321707},
+        24: {'name': 'Lieutenant Commander', 'xp': 369091},
+        25: {'name': 'Commander I', 'xp': 417896},
+        26: {'name': 'Commander II', 'xp': 468166},
+        27: {'name': 'Commander III', 'xp': 519943},
+        28: {'name': 'Senior Commander', 'xp': 573274},
+        29: {'name': 'Knight Commander', 'xp': 628205},
+        30: {'name': 'Captain I', 'xp': 684783},
+        31: {'name': 'Captain II', 'xp': 743059},
+        32: {'name': 'Captain III', 'xp': 803084},
+        33: {'name': 'Senior Captain', 'xp': 864909},
+        34: {'name': 'Knight Captain', 'xp': 928589},
+        35: {'name': 'Marshal I', 'xp': 994179},
+        36: {'name': 'Marshal II', 'xp': 1061737},
+        37: {'name': 'Marshal III', 'xp': 1131321},
+        38: {'name': 'High Marshal', 'xp': 1202994},
+        39: {'name': 'Holdfast Lord', 'xp': 1276816},
+        40: {'name': 'Champion I', 'xp': 1352853},
+        41: {'name': 'Champion II', 'xp': 1431171},
+        42: {'name': 'Champion III', 'xp': 1511839},
+        43: {'name': 'Champion IV', 'xp': 1594926},
+        44: {'name': 'Champion V', 'xp': 1680507},
+        45: {'name': 'Fusor', 'xp': 1768654},
+        46: {'name': 'Ghost', 'xp': 1859447},
+        47: {'name': 'Warlord', 'xp': 1952963},
+        48: {'name': 'Collosus', 'xp': 2049284},
+        49: {'name': 'Avenger', 'xp': 2148495},
+        50: {'name': 'Immortal', 'xp': 2250682}
+    }
+
+    if xp < 0:
+        xp = 0
+
+    found = False
+    previous_rank = 1
+    for rank in ranks.keys():
+        if found == False:
+            if xp < ranks[rank][xp]:
+                found = previous_rank
+            else:
+                previous_rank = rank
+
+    if found == False:
+        found = 50
+
+    return found
+
 
 class PlayerProgression:
-    def __init__(self, rank_xp=0, last_first_win_time=DEFAULT_LAST_WIN_DATETIME):
+    def __init__(self, rank=0, rank_xp=0, last_first_win_time=DEFAULT_LAST_WIN_DATETIME):
+        self.rank = rank
         self.rank_xp = rank_xp
         self.last_first_win_time = last_first_win_time
 
@@ -52,6 +124,7 @@ class PlayerProgression:
         xp_earned = int(xp_earned)
 
         self.rank_xp += xp_earned
+        self.rank = xp_to_rank(self.rank_xp)
 
     @classmethod
     def from_dict(cls, d):
@@ -66,6 +139,7 @@ class PlayerProgression:
 
     def to_dict(self):
         return {
+            'rank': xp_to_rank(self.rank_xp),
             'rank_xp': self.rank_xp,
             'last_first_win_time': self.last_first_win_time.strftime('%Y-%m-%dT%H:%M:%S.%fZ')
         }
