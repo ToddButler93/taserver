@@ -135,7 +135,7 @@ class PlayerProgression:
             except ValueError:
                 # Ignore invalid last first win time
                 pass
-        return cls(d.get('rank_xp', 0), last_first_win_time)
+        return cls(xp_to_rank(d.get('rank_xp', 0)), d.get('rank_xp', 0), last_first_win_time)
 
     def to_dict(self):
         return {
