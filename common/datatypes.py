@@ -1886,8 +1886,8 @@ class m0132(arrayofenumblockarrays):
 
     def setplayers(self, players):
         player_team_to_datatype_team = {
-            None: 1,
-            TEAM_SPEC: 1,
+            None: 0,
+            TEAM_SPEC: 0,
             TEAM_BLOODEAGLE: 1,
             TEAM_DIAMONDSWORD: 2
         }
