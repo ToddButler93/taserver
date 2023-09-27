@@ -736,7 +736,7 @@ class m0273(fourbytes):
 
 class m0296(fourbytes):
     def __init__(self):
-        super().__init__(0x0296, 0x00000007)  # player level
+        super().__init__(0x0296, 0x00000001)  # player rank
 
 
 class m0298(fourbytes):
