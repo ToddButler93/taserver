@@ -100,8 +100,8 @@ def xp_to_rank(xp=0):
 
 
 class PlayerProgression:
-    def __init__(self, rank=0, rank_xp=0, last_first_win_time=DEFAULT_LAST_WIN_DATETIME):
-        self.rank = rank
+    def __init__(self, rank_xp=0, last_first_win_time=DEFAULT_LAST_WIN_DATETIME):
+        self.rank = xp_to_rank(rank_xp)
         self.rank_xp = rank_xp
         self.last_first_win_time = last_first_win_time
 
@@ -135,11 +135,11 @@ class PlayerProgression:
             except ValueError:
                 # Ignore invalid last first win time
                 pass
-        return cls(xp_to_rank(d.get('rank_xp', 0)), d.get('rank_xp', 0), last_first_win_time)
+        return cls(d.get('rank_xp', 0), last_first_win_time)
 
     def to_dict(self):
         return {
-            'rank': xp_to_rank(self.rank_xp),
+            'rank': self.rank,
             'rank_xp': self.rank_xp,
             'last_first_win_time': self.last_first_win_time.strftime('%Y-%m-%dT%H:%M:%S.%fZ')
         }
