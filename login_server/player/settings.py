@@ -88,7 +88,7 @@ def xp_to_rank(xp=0):
     previous_rank = 1
     for rank in ranks.keys():
         if found == False:
-            if xp < ranks[rank][xp]:
+            if xp < ranks[rank]['xp']:
                 found = True
             else:
                 previous_rank = rank
