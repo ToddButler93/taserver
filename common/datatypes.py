@@ -1016,7 +1016,7 @@ class m0448(fourbytes):
 
 class m0452(fourbytes):
     def __init__(self):
-        super().__init__(0x0452, 0x00000001)
+        super().__init__(0x0452, 0x00000000)
 
 
 class m0457(fourbytes):
