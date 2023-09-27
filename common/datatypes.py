@@ -1903,7 +1903,7 @@ class m0132(arrayofenumblockarrays):
                 m0615(),
                 m0452().set(player_team_to_datatype_team[player.team]),
                 m0225(),
-                m0296(),
+                m0296().set(player.player_settings.progression.rank),
                 m06ee(),
                 m042e(),
                 m042f(),
