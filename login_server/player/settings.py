@@ -89,14 +89,14 @@ def xp_to_rank(xp=0):
     for rank in ranks.keys():
         if found == False:
             if xp < ranks[rank][xp]:
-                found = previous_rank
+                found = True
             else:
                 previous_rank = rank
 
     if found == False:
-        found = 50
+        previous_rank = 50
 
-    return found
+    return previous_rank
 
 
 class PlayerProgression:
