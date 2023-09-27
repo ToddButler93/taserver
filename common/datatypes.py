@@ -1888,8 +1888,8 @@ class m0132(arrayofenumblockarrays):
         player_team_to_datatype_team = {
             None: 0,
             TEAM_SPEC: 0,
-            TEAM_BLOODEAGLE: 1,
-            TEAM_DIAMONDSWORD: 2
+            TEAM_BLOODEAGLE: 2,
+            TEAM_DIAMONDSWORD: 1
         }
 
         self.arrays = []
