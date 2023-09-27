@@ -736,7 +736,7 @@ class m0273(fourbytes):
 
 class m0296(fourbytes):
     def __init__(self):
-        super().__init__(0x0296, 0x00000007)  # player level
+        super().__init__(0x0296, 0x00000001)  # player rank
 
 
 class m0298(fourbytes):
@@ -1016,7 +1016,7 @@ class m0448(fourbytes):
 
 class m0452(fourbytes):
     def __init__(self):
-        super().__init__(0x0452, 0x00000001)
+        super().__init__(0x0452, 0x00000000)
 
 
 class m0457(fourbytes):
@@ -1886,10 +1886,10 @@ class m0132(arrayofenumblockarrays):
 
     def setplayers(self, players):
         player_team_to_datatype_team = {
-            None: 1,
-            TEAM_SPEC: 1,
-            TEAM_BLOODEAGLE: 1,
-            TEAM_DIAMONDSWORD: 2
+            None: 0,
+            TEAM_SPEC: 0,
+            TEAM_BLOODEAGLE: 2,
+            TEAM_DIAMONDSWORD: 1
         }
 
         self.arrays = []
@@ -1903,7 +1903,7 @@ class m0132(arrayofenumblockarrays):
                 m0615(),
                 m0452().set(player_team_to_datatype_team[player.team]),
                 m0225(),
-                m0296(),
+                m0296().set(player.player_settings.progression.rank),
                 m06ee(),
                 m042e(),
                 m042f(),
