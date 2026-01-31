@@ -18,7 +18,7 @@
 # along with taserver.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-from distutils.version import StrictVersion
+from packaging.version import Version
 import gevent
 import hashlib
 import logging
@@ -475,7 +475,7 @@ class LoginServer:
         return map_names_and_types.get(str(map_id), ["Unknown","Unknown"])
 
     def handle_launcher_protocol_version_message(self, msg):
-        launcher_version = StrictVersion(msg.version)
+        launcher_version = Version(msg.version)
         my_version = launcher2loginserver_protocol_version
 
         if my_version.version[0] != launcher_version.version[0]:

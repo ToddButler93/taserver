@@ -18,7 +18,7 @@
 # along with taserver.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-from distutils.version import StrictVersion
+from packaging.version import Version
 import gevent
 import logging
 import os
@@ -251,7 +251,7 @@ class Launcher:
                                        (versions.launcher2loginserver_protocol_version,
                                         self.login_server.ip,
                                         self.login_server.port,
-                                        StrictVersion(msg.version)))
+                                        Version(msg.version)))
 
     def freeze_active_server_if_empty(self):
         if len(self.players) == 0 and self.active_server.ready and not self.active_server.frozen:
@@ -308,7 +308,7 @@ class Launcher:
             self.game_controller.send(Launcher2GamePings(msg.player_pings))
 
     def handle_game_controller_protocol_version_message(self, msg):
-        controller_version = StrictVersion(msg.version)
+        controller_version = Version(msg.version)
         my_version = versions.launcher2controller_protocol_version
 
         self.logger.info('launcher: received protocol version %s from game controller' % controller_version)

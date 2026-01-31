@@ -18,8 +18,8 @@
 # along with taserver.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-from distutils.version import StrictVersion
+from packaging.version import Version
 
 # These versions must follow the MAJOR.MINOR.PATCH format of SemVer (https://semver.org/)
-launcher2controller_protocol_version = StrictVersion('5.0.0')
-launcher2loginserver_protocol_version = StrictVersion('11.0.0')
+launcher2controller_protocol_version = Version('5.0.0')
+launcher2loginserver_protocol_version = Version('11.0.0')

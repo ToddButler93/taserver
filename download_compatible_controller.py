@@ -19,7 +19,7 @@
 #
 
 import certifi
-from distutils.version import StrictVersion
+from packaging.version import Version
 import os
 import re
 import xml.etree.ElementTree as XML
@@ -56,7 +56,7 @@ def get_available_tamods_versions():
         match = re.match(r'TAMods-Server-(.*).dll', filename)
         if match:
             try:
-                version = StrictVersion(match.group(1))
+                version = Version(match.group(1))
                 available_tamods_versions.append(version)
                 version_to_filename_map[str(version)] = filename
             except ValueError:
@@ -79,13 +79,13 @@ def load_version_map():
 
         fields = (field.strip() for field in line.split(','))
         protocol_version, tamods_version = fields
-        version_map[str(StrictVersion(tamods_version))] = StrictVersion(protocol_version)
+        version_map[str(Version(tamods_version))] = Version(protocol_version)
 
     return version_map
 
 
 def get_protocol_version(tamods_version, compatibility_map):
-    sorted_tamods_versions = sorted(StrictVersion(version) for version in compatibility_map.keys())
+    sorted_tamods_versions = sorted(Version(version) for version in compatibility_map.keys())
     versions_not_newer = [version for version in sorted_tamods_versions if version <= tamods_version]
     latest_version_not_newer = versions_not_newer[-1]
     protocol_version = compatibility_map[str(latest_version_not_newer)]
@@ -93,7 +93,7 @@ def get_protocol_version(tamods_version, compatibility_map):
 
 
 def is_compatible(version1, version2):
-    return version1.version[0] == version2.version[0]
+    return version1.major == version2.major
 
 
 def download_tamods_server_version(download_filename):
@@ -121,7 +121,10 @@ def main():
 
     latest_compatible_version = None
     for tamods_version in reversed(available_tamods_versions):
-        if is_compatible(get_protocol_version(tamods_version, version_map), launcher2controller_protocol_version):
+        if is_compatible(
+            get_protocol_version(tamods_version, version_map),
+            launcher2controller_protocol_version,
+        ):
             latest_compatible_version = tamods_version
             break
 
