@@ -478,7 +478,7 @@ class LoginServer:
         launcher_version = Version(msg.version)
         my_version = launcher2loginserver_protocol_version
 
-        if my_version.version[0] != launcher_version.version[0]:
+        if my_version.release[0] != launcher_version.release[0]:
             game_server = msg.peer
             self.logger.warning(f"{game_server} uses launcher protocol {launcher_version} which is " 
                                 f"not compatible with this login server's protocol version {my_version}. "

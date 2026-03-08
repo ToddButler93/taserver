@@ -313,7 +313,7 @@ class Launcher:
 
         self.logger.info('launcher: received protocol version %s from game controller' % controller_version)
 
-        if controller_version.version[0] != my_version.version[0]:
+        if controller_version.release[0] != my_version.release[0]:
             raise IncompatibleVersionError('The protocol version of the game controller DLL (%s) is incompatible '
                                            'with the version supported by this game server launcher (%s)' %
                                            (controller_version,
